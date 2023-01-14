@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-# Create your views here.
+from main.models import Parse_data
+
+
+def main_page(request):
+    context = Parse_data.objects.filter().all
+    return render(request, 'main_page.html', {"context": context})
+
+
