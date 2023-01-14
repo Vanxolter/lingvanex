@@ -7,39 +7,39 @@ import django
 django.setup()
 from main.models import Parse_data
 
-'''class Command(BaseCommand):
+
+class Command(BaseCommand):
     help = "Crawl apps.microsoft"
 
     def handle(self, *args, **options):
-        def get_links_apps():
-            options = webdriver.ChromeOptions()
-            options.add_argument("--headless")
-            driver = webdriver.Chrome(options=options)
+        options = webdriver.ChromeOptions()
+        options.add_argument("--headless")
+        driver = webdriver.Chrome(options=options)
+        time.sleep(2)
+
+        driver.get("https://apps.microsoft.com/store/category/Business")
+
+        for i in range(0):
+            driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
             time.sleep(2)
 
-            driver.get("https://apps.microsoft.com/store/category/Business")
-
-            for i in range(0):
-                driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
-                time.sleep(2)
-
-            ides = driver.find_element(By.ID, "all-products-listall-list-container")
-            ides2 = ides.find_element(By.CSS_SELECTOR, "div[role='row']")
-            card = ides2.find_elements(By.XPATH, "//*[@class='product_card_title title']")
-            urls = []
-            for i in card:
-                urls.append(i.get_attribute("href"))
-                Apps.objects.update_or_create(
-                    name_app=i.get_attribute("href")
-                )
-            print(urls)
-            print(len(urls))'''
+        ides = driver.find_element(By.ID, "all-products-listall-list-container")
+        ides2 = ides.find_element(By.CSS_SELECTOR, "div[role='row']")
+        card = ides2.find_elements(By.XPATH, "//*[@class='product_card_title title']")
+        urls = []
+        for i in card:
+            urls.append(i.get_attribute("href"))
+            Parse_data.objects.update_or_create(
+                link=i.get_attribute("href"), name_app="1",
+            )
+        print(urls)
+        print(len(urls))
 
 
 
-options = webdriver.ChromeOptions()
+'''options = webdriver.ChromeOptions()
 options.add_argument("--headless")
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome()
 time.sleep(2)
 
 driver.get("https://apps.microsoft.com/store/category/Business")
@@ -55,9 +55,9 @@ urls = []
 for i in card:
     urls.append(i.get_attribute("href"))
     Parse_data.objects.update_or_create(
-        name_app=i.get_attribute("href")
+        link=i.get_attribute("href"), name_app="1",
     )
 print(urls)
-print(len(urls))
+print(len(urls))'''
 
 
