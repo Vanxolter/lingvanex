@@ -20,19 +20,19 @@
             <th scope="col">email</th>
         </tr>
         </thead>
-        {% for info in context %}
+        {% for app in apps %}
             <tbody>
 
             <tr>
-                <th scope="row">{{ info.name_app }}</th>
-                <td>{{ info.name_company }}</td>
-                <td>{{ info.release_year }}</td>
-                <td>{{ info.email }}</td>
-                </a>
+                <th scope="row">{{ app.name_app }}</th>
+                <td>{{ app.name_company }}</td>
+                <td>{{ app.release_year }}</td>
+                <td>{{ app.email }}</td>
             </tr>
             </tbody>
         {% endfor %}
     </table>
+{% include "pagination.html" with page=apps %}
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
