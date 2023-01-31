@@ -1,3 +1,4 @@
+{% load static crispy_forms_filters %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,10 @@
 <body>
 <div class="container">
     <h1>Таблица с информацией</h1>
+    <form class="form-inline">
+        {{ filters_form|crispy }}
+        <button type="submit" class="save btn btn-primary">Поиск</button>
+    </form>
     <table class="table table-hover">
         <thead>
         <tr>
