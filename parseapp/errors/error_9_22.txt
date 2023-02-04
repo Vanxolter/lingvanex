@@ -1,0 +1,34 @@
+Функ. save_main_page(), стр.72Traceback (most recent call last):
+  File "/home/vanxolter/projects/lingvanex/parseapp/main/management/commands/functions_bot.py", line 151, in fishing_main_data
+    name = soup.find(class_="breadcrumb").find("a", {"index": "2"}).text
+AttributeError: 'NoneType' object has no attribute 'find'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/vanxolter/projects/lingvanex/parseapp/main/management/commands/functions_bot.py", line 61, in save_main_page
+    WebDriverWait(driver, timeout).until(element_present)
+  File "/home/vanxolter/projects/lingvanex/venv/lib/python3.10/site-packages/selenium/webdriver/support/wait.py", line 95, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+#0 0x559252805303 <unknown>
+#1 0x5592525d9d37 <unknown>
+#2 0x5592526165b2 <unknown>
+#3 0x5592526166c1 <unknown>
+#4 0x559252650b34 <unknown>
+#5 0x5592526369ad <unknown>
+#6 0x55925264e88c <unknown>
+#7 0x559252636753 <unknown>
+#8 0x559252609a14 <unknown>
+#9 0x55925260ab7e <unknown>
+#10 0x55925285432e <unknown>
+#11 0x559252857c0e <unknown>
+#12 0x55925283a610 <unknown>
+#13 0x559252858c23 <unknown>
+#14 0x55925282c545 <unknown>
+#15 0x5592528796a8 <unknown>
+#16 0x559252879836 <unknown>
+#17 0x559252894d13 <unknown>
+#18 0x7ff55ecfab43 <unknown>
+
