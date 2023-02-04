@@ -32,3 +32,21 @@ Author: Maksim Laurou <Lavrov.python@gmail.com>
 
 Результаты
 -----
+Страница с пустой базой данных до скрапинга
+![result 1](https://github.com/Vanxolter/lingvanex/blob/521f5c592d4facca1872a63023dc90e9514e168a/parseapp/screens/1.png)  
+
+Процесс скрапинга, ошибки чтения возникают при медленной прогрузке страницы при помощи selenium.
+При возникновении ошибки, мы повторно перезагружаем страницу и пока не достанем нужные данные, цикл будет повторяться
+![result 2](https://github.com/Vanxolter/lingvanex/blob/521f5c592d4facca1872a63023dc90e9514e168a/parseapp/screens/2.png)  
+
+Отображение таблицы с данными, здесь я достал 30 приложений, чему свидетельствует пагинация по 3-ем страницам
+![result 3](https://github.com/Vanxolter/lingvanex/blob/521f5c592d4facca1872a63023dc90e9514e168a/parseapp/screens/3.png)  
+
+Сортировка по году, видим что изначально показываются более старые приложения
+![result 4](https://github.com/Vanxolter/lingvanex/blob/521f5c592d4facca1872a63023dc90e9514e168a/parseapp/screens/4.png)  
+
+Сортировка работает на каждой странице отдельно
+![result 5](https://github.com/Vanxolter/lingvanex/blob/521f5c592d4facca1872a63023dc90e9514e168a/parseapp/screens/5.png)  
+
+Фильтирация по полному названию компании (по частичному названию не была реализована)
+![result 6](https://github.com/Vanxolter/lingvanex/blob/521f5c592d4facca1872a63023dc90e9514e168a/parseapp/screens/6.png)  
