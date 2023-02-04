@@ -13,13 +13,14 @@ from main.models import Parse_data
 
 
 class Command(BaseCommand):
-    help = "python manage.py functions_bot"
+
+    help = "Запуск парсера через консоль - python manage.py functions_bot"
 
     def handle(self, *args, **options):
         def errors_log(info, main_info):
 
             """
-			Логирование ошибок
+			Кэширование ошибок в файлы
 			:param info: Информация по ошибке
 			:return: none
 			"""
@@ -51,7 +52,7 @@ class Command(BaseCommand):
             try:
                 driver.get(url)
                 if args:
-                    for i in range(0):
+                    for i in range(9): # Прокручиваем страницу 9 раз пока не достанем 200 аппак
                         driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
                         time.sleep(1.5)
                 else:
